@@ -78,6 +78,9 @@ API documentation is located in the `doc` folder of the project.
 
 
 ----
+You may also be interested in checking out my [wpm1](https://github.com/zenradar/wpm1) project.
+
+----
   
 	
  
