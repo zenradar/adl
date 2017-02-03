@@ -27,26 +27,26 @@ Getting Started
     ```sh
     $ git clone https://github.com/zenradar/adl.git
 	```
-	
+
 2. Change directory to `adl`
-    
+
     ```sh
     $ cd adl
 	```
-	
+
 3. Run from Maven
 
     ```sh
 	$ mvn jetty:run
 	```
-    
+
 	or if port 8080 is occupied, tell `jetty` to use another port
-    
+
 	```sh
     $ mvn -Djetty.port=8765 jetty:run
 	```
-	
-4. Open in your favourite browser 
+
+4. Open in your favourite browser
 go to http://localhost:8080/digital-library
 
 5. Have a look around, shouldn't take too long!
@@ -65,6 +65,19 @@ You can check the health of the project anytime by running the unit tests from t
 ```sh
 $ mvn test
 ```
+Unit testing database tables are created and seeded at start-up  using these scripts:
+```
+src/test/resources/db/sql/create-test-db.sql
+src/test/resources/db/sql/seed-test-data.sql
+```
+
+Project database tables are created and seeded at start-up using these scripts:
+```
+src/main/resources/db/sql/create-db.sql
+src/main/resources/db/sql/seed-data.sql
+```
+
+
 
 ### Logging
 
@@ -81,6 +94,3 @@ API documentation is located in the `doc` folder of the project.
 You may also be interested in checking out my [wpm1](https://github.com/zenradar/wpm1) project.
 
 ----
-  
-	
- 
