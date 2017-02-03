@@ -7,6 +7,13 @@ import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.zenradar.adl.model.User;
 
+/**
+ * Maps a row from the given ResultSet to a User object
+ * @see UserDaoImpl
+ * 
+ * @author adam
+ *
+ */
 public class UserMapper implements ResultSetMapper<User> {
 
 	public static UserMapper INSTANCE = new UserMapper();

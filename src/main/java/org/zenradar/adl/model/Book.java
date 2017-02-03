@@ -1,5 +1,11 @@
 package org.zenradar.adl.model;
 
+/**
+ * Represents a book in the library
+ * 
+ * @author adam
+ *
+ */
 public class Book {
 
 	Integer id;

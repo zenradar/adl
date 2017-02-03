@@ -5,6 +5,12 @@ import javax.servlet.ServletException;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * WebInitialiser
+ * 
+ * @author adam
+ *
+ */
 public class WebInitialiser extends AbstractAnnotationConfigDispatcherServletInitializer {
 
 	@Override
@@ -22,6 +28,12 @@ public class WebInitialiser extends AbstractAnnotationConfigDispatcherServletIni
 		return new String[] { "/" };
 	}
 
+	/**
+	 * Set the profile to h2.
+	 * This will use an embedded h2 data source.
+	 * The profile h2-unit-test is used for unit testing.
+	 * @see UserDaoTest
+	 */
 	@Override
 	public void onStartup(ServletContext servletContext) throws ServletException {
 		super.onStartup(servletContext);

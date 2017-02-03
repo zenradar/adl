@@ -7,15 +7,28 @@ import javax.sql.DataSource;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.stereotype.Repository;
 import org.zenradar.adl.model.Book;
 
+/**
+ * Book data access object implementation
+ * @see BookDao
+ * @author adam
+ *
+ */
 @Repository
 public class BookDaoImpl implements BookDao {
 
 	@Autowired
 	DataSource datasource;
+	
+	public BookDaoImpl() {
+	}
 
+	public BookDaoImpl(EmbeddedDatabase db) {
+		this.datasource = db;
+	}
 
 	@Override
 	public Book findByTitle(String title) {

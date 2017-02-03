@@ -1,5 +1,12 @@
 package org.zenradar.adl.model;
 
+/**
+ * Represents a member of the library
+ * 
+ * @author adam
+ *
+ */
+
 public class User {
 
 	Integer id;

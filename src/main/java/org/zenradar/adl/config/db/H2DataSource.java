@@ -12,6 +12,14 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
+/**
+ * Creates and populates an embedded h2 database.
+ * The profile h2-unit-test is used for unit testing.
+ * @see TestH2DataSource
+ * 
+ * @author adam
+ *
+ */
 @Profile("h2")
 @Configuration
 public class H2DataSource {
@@ -19,14 +27,13 @@ public class H2DataSource {
 	// jdbc:h2:mem:testdb
 	@Bean
 	public DataSource dataSource() {
-
 		EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
 		EmbeddedDatabase db = builder.setType(EmbeddedDatabaseType.H2).addScript("db/sql/create-db.sql").addScript("db/sql/seed-data.sql").build();
 		return db;
 
 	}
 
-	// For testing: start H2 webServer, access http://localhost:8082
+	// For development and debugging: start H2 webServer, access http://localhost:8082
 	/*
 	@Bean(initMethod = "start", destroyMethod = "stop")
 	public Server startDBManager() throws SQLException {

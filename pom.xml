@@ -6,25 +6,29 @@
 	<packaging>war</packaging>
 	<version>0.1</version>
 	<name>digital-library</name>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/zenradar/adl</url>
 
 	<properties>
 		<dbh2.version>1.4.193</dbh2.version>
 		<freemarker.version>2.3.23</freemarker.version>
+		<jackson.version>2.5.3</jackson.version>
 		<jdbi.version>2.78</jdbi.version>
 		<jetty.version>8.1.16.v20140903</jetty.version>
+		<junit.version>4.12</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.22</slf4j.version>
 		<spring.version>4.3.5.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
+		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
+			<version>${junit.version}</version>
 		</dependency>
 
-		<!-- FreeMarker 2.3.23 required as dependency for spring-webmvc 4.3.5.RELEASE -->
+		<!-- FreeMarker -->
 		<dependency>
 			<groupId>org.freemarker</groupId>
 			<artifactId>freemarker</artifactId>
@@ -52,30 +56,59 @@
 			<artifactId>spring-context-support</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
 		<!-- Spring JDBC -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		
 		<!-- JDBI -->
 		<dependency>
 			<groupId>org.jdbi</groupId>
 			<artifactId>jdbi</artifactId>
 			<version>${jdbi.version}</version>
 		</dependency>
+		
 		<!-- H2 -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>${dbh2.version}</version>
 		</dependency>
-		<!-- Jackson for JSON -->
+		
+		<!-- Jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.5.3</version>
+			<version>${jackson.version}</version>
 		</dependency>
+		
+		<!-- Slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		
+		<!-- Log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		
 		<!-- servlet 3.1 for compilation only -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -83,8 +116,8 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
-
 	</dependencies>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>

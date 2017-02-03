@@ -7,6 +7,12 @@ import org.skife.jdbi.v2.sqlobject.SqlQuery;
 import org.skife.jdbi.v2.sqlobject.customizers.RegisterMapper;
 import org.zenradar.adl.model.Book;
 
+/**
+ * Book data access object interface
+ * @see BookDaoImpl
+ * @author adam
+ *
+ */
 @RegisterMapper(BookMapper.class)
 public interface BookDao {
 

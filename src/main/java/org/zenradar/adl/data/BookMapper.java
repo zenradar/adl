@@ -7,6 +7,12 @@ import org.skife.jdbi.v2.StatementContext;
 import org.skife.jdbi.v2.tweak.ResultSetMapper;
 import org.zenradar.adl.model.Book;
 
+/**
+ * Maps a row from the given ResultSet to a Book object
+ * @see BookDaoImpl
+ * @author adam
+ *
+ */
 public class BookMapper implements ResultSetMapper<Book> {
 
 	public static BookMapper INSTANCE = new BookMapper();

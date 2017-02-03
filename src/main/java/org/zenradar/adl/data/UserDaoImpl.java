@@ -7,14 +7,28 @@ import javax.sql.DataSource;
 import org.skife.jdbi.v2.DBI;
 import org.skife.jdbi.v2.Handle;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.stereotype.Repository;
 import org.zenradar.adl.model.User;
 
+/**
+ * User data access object implementation
+ * @see UserDao
+ * @author adam
+ *
+ */
 @Repository
 public class UserDaoImpl implements UserDao {
 
 	@Autowired
 	DataSource datasource;
+
+	public UserDaoImpl() {
+	}
+
+	public UserDaoImpl(EmbeddedDatabase db) {
+		this.datasource = db;
+	}
 
 	@Override
 	public User findByName(String name) {

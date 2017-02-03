@@ -8,6 +8,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+/**
+ * RootConfig
+ * 
+ * @author adam
+ *
+ */
 @ComponentScan({ "org.zenradar.adl" })
 @Configuration
 public class RootConfig {
@@ -15,13 +21,4 @@ public class RootConfig {
 	@Autowired
 	DataSource dataSource;
 
-	@Bean
-	public NamedParameterJdbcTemplate getNamedParameterJdbcTemplate() {
-		return new NamedParameterJdbcTemplate(dataSource);
-	}
-	
-//	@Bean
-//	public DataSource getH2DataSource() {
-//		return dataSource;
-//	}
 }
