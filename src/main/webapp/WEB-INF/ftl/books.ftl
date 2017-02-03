@@ -3,21 +3,23 @@
 
 <body>
 
-<#include "navbar.ftl"/>    
+<#include "navbar.ftl"/>
 
 <div id="content">
-    
+  <h2>Library Catalogue</h2>
   <table class="table table-striped">
   	<tr>
   		<th>Title</th>  <th>Author</th> <th>ISBN</th>
   	</tr>
     <#list model["bookList"] as book>
   	<tr>
-  		<td>${book.title}</td> <td>${book.author}</td> <td>${book.isbn}</td>
+  		<td>${book.title}</td>
+      <td>${book.author}</td>
+      <td>${book.isbn}</td>
   	</tr>
     </#list>
   </table>
 
-</div>  
+</div>
 </body>
-</html>  
+</html>
