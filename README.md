@@ -3,17 +3,19 @@ Another Digital Library
 
 A simple web application to demonstrate the following technologies:
 
-* Maven -  https://maven.apache.org
-* Spring MVC -  https://spring.io
-* H2 -  http://www.h2database.com
-* JDBI -  http://jdbi.org
-* FreeMarker -  http://freemarker.org
-* Bootstrap -  http://getbootstrap.com
-* JQuery - https://jquery.com 
-* JUnit - http://junit.org
-* Jetty - https://eclipse.org/jetty
+| Framework | URL |
+|----|----|
+|Maven | https://maven.apache.org |
+|Spring MVC | https://spring.io |
+| H2 | http://www.h2database.com |
+| JDBI | http://jdbi.org |
+| FreeMarker | http://freemarker.org |
+| Bootstrap | http://getbootstrap.com |
+| JQuery | https://jquery.com |
+| JUnit | http://junit.org |
+| Jetty | https://eclipse.org/jetty |
 
-And to keep things interesting we are using the [org.mortbay jetty maven plugin](https://mvnrepository.com/artifact/org.mortbay.jetty/jetty)
+To keep things interesting we are using the [org.mortbay jetty maven plugin](https://mvnrepository.com/artifact/org.mortbay.jetty/jetty)
 rather than the Eclipse Jetty plugin.
 
 
